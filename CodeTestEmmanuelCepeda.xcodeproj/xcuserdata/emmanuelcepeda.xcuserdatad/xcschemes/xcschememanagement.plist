@@ -7,7 +7,25 @@
 		<key>CodeTestEmmanuelCepeda.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>9880545B2256D3A000480FF9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>988054722256D3A200480FF9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9880547D2256D3A200480FF9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

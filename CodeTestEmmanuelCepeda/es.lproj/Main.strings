@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9l9-dG-LXP"; */
+"9l9-dG-LXP.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fwk-S1-JS2"; */
+"fwk-S1-JS2.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "h79-1d-WgM"; */
+"h79-1d-WgM.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Mark as favorito"; ObjectID = "pxB-Hf-O2f"; */
+"pxB-Hf-O2f.normalTitle" = "Marca como favorito";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "riC-Bm-5tn"; */
+"riC-Bm-5tn.text" = "Label"; 
+
+/* Class = "UIBarButtonItem"; title = "||||"; ObjectID = "uJi-Fp-oe3"; */
+"uJi-Fp-oe3.title" = "||||";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "vaQ-PL-9Ba"; */
+"vaQ-PL-9Ba.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zMp-LE-G7J"; */
+"zMp-LE-G7J.text" = "Label";
