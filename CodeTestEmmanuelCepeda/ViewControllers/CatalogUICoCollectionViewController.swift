@@ -10,33 +10,27 @@ import UIKit
 import SDWebImage
 import ViewAnimator
 
-let SHOW_DETAIL: String = "showDetail"
-let PLACE_HOLDER: String = "placeholder.jpg"
-let NAVEGATION_TITLE_RATED: String = "Higher Audience"
-let NAVEGATION_TITLE_POPULAR: String = "Popular"
-
-private let reuseIdentifier = "Cell"
-
 class CatalogUICoCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var filterButton: UIBarButtonItem!
+    @IBOutlet weak private var filterButton: UIBarButtonItem!
     
-    var movies: [Movie] = []
-    var placeHolder: UIImage!
-    var imageArrayUrl: [URL] = []
-    let animationImage = UIImageView()
-    var titleBar: String?
-    var isTopRated = true
-    var movieImage = UIImage()
-    var time: TimeInterval = 1.00
+    private var movies: [Movie] = []
+    private var placeHolder: UIImage!
+    private var imageArrayUrl: [URL] = []
+    private let animationImage = UIImageView()
+    private var titleBar: String?
+    private var isTopRated = true
+    private var movieImage = UIImage()
+    private var time: TimeInterval = 1.00
+    private let reuseIdentifier = Constants.strings.reuseIdentifier
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getMovies(isTopRated: isTopRated)
-        placeHolder = UIImage(named: PLACE_HOLDER)
+        placeHolder = UIImage(named:Constants.strings.placeHolder)
         //Set navigation initial configuration
-        self.navigationItem.title = NAVEGATION_TITLE_RATED
+        self.navigationItem.title = Constants.strings.navegationTitleRated
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         
@@ -50,15 +44,15 @@ class CatalogUICoCollectionViewController: UICollectionViewController,UICollecti
     
     func getMovies(isTopRated: Bool){
         //Request to get movies as topRated as default
-        WebServices.getMovies(isTopRated:isTopRated) { (movies,err) in
+        WebServices.getMovies(isTopRated:isTopRated) {[weak self] (movies,err) in
             if (err == nil) {
-                self.movies = movies!
+                self?.movies = movies!
                 for movie in movies! {
                     guard let url = URL(string:Constants.url.movieImageBaseUrlw780 + movie.backdrop_path ) else{return}
-                    self.imageArrayUrl.append(url)
+                    self?.imageArrayUrl.append(url)
                 }
                 DispatchQueue.main.async{
-                    self.collectionView.reloadData()
+                    self?.collectionView.reloadData()
                 }
             }
         }
@@ -68,7 +62,7 @@ class CatalogUICoCollectionViewController: UICollectionViewController,UICollecti
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SHOW_DETAIL {
+        if segue.identifier == Constants.strings.ShowDetail{
             let cell = sender as! MovieCollectionViewCell
             let indexPath = self.collectionView!.indexPath(for: cell)
             let detailViewController = segue.destination as! MovieDetailViewController
@@ -96,7 +90,7 @@ class CatalogUICoCollectionViewController: UICollectionViewController,UICollecti
         let imageURL = Constants.url.movieImageBaseUrlw780 + movie.backdrop_path
         let url = URL(string: imageURL)
         
-        //**** SDWebImage pod is saveving/caching in memory and it help us to avoid download each image again.
+        //**** SDWebImage pod is saving/caching in memory and it help us to avoid download each image again.
         cell.movieImageView?.sd_setImage(with: url)
         movieImage = cell.movieImageView?.image ?? UIImage()
         if movie.favorite == nil {movie.favorite = false}
@@ -132,11 +126,11 @@ class CatalogUICoCollectionViewController: UICollectionViewController,UICollecti
     @IBAction func filterButtonTapped(_ sender: Any) {
         if isTopRated  {
             isTopRated = false
-            self.navigationItem.title = NAVEGATION_TITLE_POPULAR
+            self.navigationItem.title = Constants.strings.navegationTitlePopular //NAVEGATION_TITLE_POPULAR
             self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.2511725426, green: 0.5887399912, blue: 0.5322039723, alpha: 1)
         }else{
             isTopRated = true
-            self.navigationItem.title = NAVEGATION_TITLE_RATED
+            self.navigationItem.title = Constants.strings.navegationTitleRated //NAVEGATION_TITLE_RATED
             self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             
         }

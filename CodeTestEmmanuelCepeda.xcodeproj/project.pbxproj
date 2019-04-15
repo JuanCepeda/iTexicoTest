@@ -175,10 +175,9 @@
 		9880545E2256D3A000480FF9 /* CodeTestEmmanuelCepeda */ = {
 			isa = PBXGroup;
 			children = (
-				9880549B2256EFB500480FF9 /* Helpers */,
-				988054962256EC1400480FF9 /* ViewModel */,
 				988054952256EC0300480FF9 /* Model */,
 				988054902256E69700480FF9 /* ViewControllers */,
+				9880549B2256EFB500480FF9 /* Helpers */,
 				9880545F2256D3A000480FF9 /* AppDelegate.swift */,
 				988054632256D3A000480FF9 /* Main.storyboard */,
 				988054692256D3A200480FF9 /* Assets.xcassets */,
@@ -228,17 +227,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		988054962256EC1400480FF9 /* ViewModel */ = {
+		988054962256EC1400480FF9 /* WebServices */ = {
 			isa = PBXGroup;
 			children = (
 				988054972256EC2000480FF9 /* WebService.swift */,
 			);
-			path = ViewModel;
+			path = WebServices;
 			sourceTree = "<group>";
 		};
 		9880549B2256EFB500480FF9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				988054962256EC1400480FF9 /* WebServices */,
 				988054B422586C1600480FF9 /* Fonts */,
 				9880549C2256EFC400480FF9 /* Constants.swift */,
 			);

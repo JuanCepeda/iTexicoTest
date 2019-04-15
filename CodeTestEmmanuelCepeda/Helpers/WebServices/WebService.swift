@@ -53,8 +53,4 @@ class WebServices: NSObject {
             }
             }.resume()
     }
-    
-    
-    
-    
 }
